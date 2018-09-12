@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>晋中城区分局</title>
+	<link rel="stylesheet" href="__ROOT__/public/css/quchumr.css">
+	<link rel="stylesheet" href="__ROOT__/public/css/index.css">
+	<link rel="stylesheet" href="__ROOT__/public/css/reset.css">
+	<script src="__ROOT__/library/js/jquery.min.js"></script>
+	<script src="__ROOT__/library/js/index.js"></script>
+	<script src="__ROOT__/library/js/html5media.min.js"></script>
+	<style>
+		
+.ui-popup-guanbi{height:20px;width: 20px;margin-top:-10px;margin-left:390px;
+		background:url('__ROOT__/public/images/close21.png');cursor:pointer;}
+		.key{
+			float:right;
+			margin:-2.8% 0.5% 0px 0px;
+			background:url(__ROOT__/public/images/sousuo.png) no-repeat;
+			border:hidden;
+			width:165px;
+			    height: 25px;
+		}
+.newsContent{
+	width:560px;
+	margin:10px auto 0px auto;
+	text-align:left;
+	line-height:22px;
+}
+.newsImg{
+	width:560px;
+	margin:10px auto 0px auto;
+	text-align:center;
+}
+.newsTime{
+	width:100%;
+	margin:10px auto 0px auto;
+/* 	font-style:italic; */
+	text-align:center;
+	border-bottom: 1px dotted #ccc
+}
+.newsTitle{
+	width:560px;
+	margin:10px auto 0px auto;
+	font-size:20px;
+	font-weight:bold;
+	text-align:center;
+}
+.unit{
+	width:560px;
+text-align:right;
+}
+	</style>
+</head>
+<body>
+	<include file="Public:header"/>
+	<!-- 二级页面内容部分 -->
+	<div class="lrc_neirongqu">
+		<div class="lrc_neirongqunei">
+			<div class="lrc_neirongquleft">
+				<div class="left">
+				    <volist name="listtype" id="v">
+				    <div class="lrc_xlxx">
+				        <div class="lrc_div2" >
+				          <div class="lrc_jbsz"></div>
+				        <a href="__APP__/Listtype/index/typeId/{$v.typeId}">{$v.typeName}</a>
+				        </div>
+				        <div class="lrc_div3">
+				          <ul class="lrc_div3left">
+				          <volist name="v.types" id="vv">
+				          	<if condition="$vv.typeName != NULL ">
+				          		<li class="mopowu"><a href="__APP__/Listtype/index/typeId/{$vv.typeId}">{$vv.typeName}</a></li>
+				          		</if>
+				         </volist>
+				          </ul>
+				        </div>
+				    </div> 
+   					</volist>
+				</div> 
+			</div>
+			
+	  <OBJECT id=MediaPlayer1 codeBase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701standby=Loading" classid=CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6  type=application/x-oleobject VIEWASTEXT><PARAM NAME="URL" VALUE="__ROOT__/public/video/jinzhong.wmv"><PARAM NAME="rate" VALUE="1"><PARAM NAME="balance" VALUE="0"><PARAM NAME="currentPosition" VALUE="91.2232424"><PARAM NAME="defaultFrame" VALUE=""><PARAM NAME="playCount" VALUE="1"><PARAM NAME="autoStart" VALUE="-1"><PARAM NAME="currentMarker" VALUE="0"><PARAM NAME="invokeURLs" VALUE="-1"><PARAM NAME="baseURL" VALUE=""><PARAM NAME="volume" VALUE="70"><PARAM NAME="mute" VALUE="0"><PARAM NAME="uiMode" VALUE="full"><PARAM NAME="stretchToFit" VALUE="0"><PARAM NAME="windowlessVideo" VALUE="0"><PARAM NAME="enabled" VALUE="-1"><PARAM NAME="enableContextMenu" VALUE="-1"><PARAM NAME="fullScreen" VALUE="0"><PARAM NAME="SAMIStyle" VALUE=""><PARAM NAME="SAMILang" VALUE=""><PARAM NAME="SAMIFilename" VALUE=""><PARAM NAME="captioningID" VALUE=""><PARAM NAME="enableErrorDialogs" VALUE="0"><PARAM NAME="_cx" VALUE="19050"><PARAM NAME="_cy" VALUE="12700"></OBJECT> 
+
+				
+				
+			
+			<p style="color: red;"><a href="__ROOT__/public/vivo/wmp11-windowsxp-x86-zh-cn.exe" style="color:red;">视频若不能播放请点此下载插件</a></p>
+		
+			<div style="clear:both"></div>
+		</div>
+	</div>
+	<!-- 分页部分开始 -->
+		<script>
+    //表单验证图
+    function checkAdd()
+    {
+      var uobj = document.getElementById('username');
+      var pobj = document.getElementById('password');
+      var qobj = document.getElementById('qianshouren');
+  	  if(uobj.value == "")
+        {
+            alert("请输入用户名！");
+            uobj.focus();
+            return false;
+        }
+  	  else if(pobj.value == "")
+        {
+            alert("请输入密码！");
+            pobj.focus();
+            return false;
+        }else if(qobj.value == ""){
+        	alert("请输入签收人！");
+            pobj.focus();
+            return false;
+        }
+    }
+   
+    </script>
+	<!-- 分页部分结束 -->
+	<!-- 二级页面底部部分 -->
+	<div class="ejymdb">
+		Copyright@2010 晋中城区公安信息网 All Rights Reserved.
+	</div>
+	<!-- 晋中城区分局二级页面结束 -->
+</body>
+</html>

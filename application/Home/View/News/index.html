@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>晋中城区分局</title>
+	<link rel="stylesheet" href="__ROOT__/public/css/quchumr.css">
+	<link rel="stylesheet" href="__ROOT__/public/css/index.css">
+	<link rel="stylesheet" href="__ROOT__/public/css/reset.css">
+	<script src="__ROOT__/library/js/jquery.min.js"></script>
+	<script src="__ROOT__/library/js/index.js"></script>
+	<style>
+		
+.ui-popup-guanbi{height:20px;width: 20px;margin-top:-10px;margin-left:390px;
+		background:url('__ROOT__/public/images/close21.png');cursor:pointer;}
+		.key{
+			float:right;
+			margin:-2.8% 0.5% 0px 0px;
+			background:url(__ROOT__/public/images/sousuo.png) no-repeat;
+			border:hidden;
+			width:165px;
+			height: 25px;
+		}
+		.fall{
+				width:700px;
+	margin: 0px auto;
+	font-family: "宋体";	
+	line-height:30px;
+	margin-left: 35%;
+	font-size:16px;
+		}
+.newsContent{
+	width:700px;
+	margin: 0px auto;
+}
+.newsContent img{
+	width:700px;
+}
+.newsImg{
+	
+	margin:10px auto 0px auto;
+	text-align:center;
+}
+.newsTime{
+	width:100%;
+	padding:20px auto;
+/* 	font-style:italic; */
+	text-align:center;
+	border-bottom: 1px dotted #ccc
+}
+.newsTitle{
+	width:700px;
+	margin:30px auto;
+	font-family:"黑体";
+	font-size:24px;
+	 font-weight:bold; 
+	text-align:center;
+}
+.unit{
+	width:700px;
+text-align:right;
+}
+	</style>
+</head>
+<body>
+	<include file="Public:header"/>
+	<!-- 二级页面内容部分 -->
+	<div class="lrc_neirongqu">
+		<div class="lrc_neirongqunei">
+			<div class="lrc_neirongquleft">
+				<div class="left">
+				    <volist name="listtype" id="v">
+				    <div class="lrc_xlxx">
+				        <div class="lrc_div2" >
+				          <div class="lrc_jbsz"></div>
+				        <a href="__APP__/Listtype/index/typeId/{$v.typeId}">{$v.typeName}</a>
+				        </div>
+				        <div class="lrc_div3">
+				          <ul class="lrc_div3left">
+				          <volist name="v.types" id="vv">
+				          	<if condition="$vv.typeName != NULL ">
+				          		<li class="mopowu"><a href="__APP__/Listtype/index/typeId/{$vv.typeId}">{$vv.typeName}</a></li>
+				          		</if>
+				         </volist>
+				          </ul>
+				        </div>
+				    </div> 
+   					</volist>
+				</div> 
+			</div>
+			<div class="lrc_neirongquright">
+				<div class="lrc_tzlm">
+					<b style="margin-left:5px">{$tpz.typeName}</b>
+					<span style="margin-left:200px"><!-- 部门: --></span>
+					<!-- <select name="" id="">
+						<option value="">所有部门</option>
+						<option value="">一部门</option>
+						<option value="">二部门</option>
+						<option value="">三部门</option>
+					</select> -->
+					<img src="__ROOT__/public/images/lrc_dw.png" alt="" style="margin-left:300px">
+					<a href="__APP__">首页</a> >
+					<a href="javascript:">{$tpz.typeName}</a> 
+					
+				</div>	
+					
+					<div class="jinchaneirnei">
+					
+						<div class="lrc_onelist">
+						<div class="newsTitle">{$news.title}</div>
+	  	<div class="newsTime">发布作者：{$news.writer} &nbsp;&nbsp;&nbsp;发布时间：{$news.date}&nbsp;&nbsp;&nbsp; 阅读人数：{$news.hint}</div>
+	  	<br>
+	  	<div class="newsImg">
+	  	<!--<if condition="$news.imagepath != NULL ">
+<img src="__ROOT__/public/{$news.imagepath}" width="700"  >
+
+		  </if>-->
+		  </div>
+	 	 <div class="newsContent" style="width:700px;">{$news.content}</div>
+	 	<!--  <div class="unit">{$news.fenju}<br/>{$news.date}</div> -->
+					</div>
+				</div>
+				<br/><br/>
+			<!-- 	 <div style="margin-left:35%;">
+				   	   <a href="__APP__/News/sig/id/{$news.id}"><input type="button" value="签收 " style="background:#1091EA;border:0px;cursor:pointer;"/></a>
+				   
+				   <a href="__APP__/News/signed/id/{$news.id}"><input type="button" value="签收明细  " style="cursor:pointer;" /></a>
+				   </div> -->
+			
+			
+			
+		</div>
+	</div>
+	<div class="fall">
+			上一篇：
+			<if condition="$snew.title != NULL ">
+				<a href="__APP__/News/index/id/{$snew.id}" style="cursor:pointer;">{$snew.title}</a>
+				<else/>
+				没有上一篇
+		</if>
+			
+	   <br/>下一篇：
+		<if condition="$xnew.title != NULL ">
+				<a href="__APP__/News/index/id/{$xnew.id}" style="cursor:pointer;">{$xnew.title}</a>
+				<else/>
+				没有下一篇
+		</if>
+	   
+	   <br/><br/><br/><br/>
+	<if condition="$news['typeId']==4 || $news['typeId']==5 || $news['typeId']==6">
+	   <form name="frm" name="myform" action="__APP__/News/sig/id/{$news.id}"  method="post" onsubmit="return checkAdd()">
+	   用户名：<input type="text" name="username" id="username"/><span id="userId"></span>&nbsp;
+	   密码：<input type="password" name="password" id="password" /><br/>
+	   签收人：<input type="text" name="qianshouren" id="qianshouren" />&nbsp;&nbsp;
+	   <input type="submit" value="签收" style="background:#1091EA;border:0px;" />	 	<span id="qianshou"></span>&nbsp;&nbsp;
+	  
+	  <input type="button" value="签收明细" onclick="qianshou({$news.id})"/>
+	   </form> <br/><br/><br/><br/><br/><br/>
+	   	  </if>
+
+			</div>
+			<script>
+				function qianshou(id){
+					window.location = "__APP__/News/signed/id/"+id;
+				}
+			</script>
+	<!-- 分页部分开始 -->
+		<script>
+    //表单验证图
+    function checkAdd()
+    {
+      var uobj = document.getElementById('username');
+      var pobj = document.getElementById('password');
+      var qobj = document.getElementById('qianshouren');
+  	  if(uobj.value == "")
+        {
+            alert("请输入用户名！");
+            uobj.focus();
+            return false;
+        }
+  	  else if(pobj.value == "")
+        {
+            alert("请输入密码！");
+            pobj.focus();
+            return false;
+        }else if(qobj.value == ""){
+        	alert("请输入签收人！");
+            pobj.focus();
+            return false;
+        }
+    }
+   
+    </script>
+	<!-- 分页部分结束 -->
+	<!-- 二级页面底部部分 -->
+	<div class="ejymdb">
+		Copyright@2010 晋中城区公安信息网 All Rights Reserved.
+	</div>
+	<!-- 晋中城区分局二级页面结束 -->
+</body>
+</html>

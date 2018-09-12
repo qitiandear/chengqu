@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>晋中公安局城区分局</title>
+<link rel="stylesheet" href="__ROOT__/public/css/quchumr.css">
+	<link rel="stylesheet" href="__ROOT__/public/css/index.css">
+	<link rel="stylesheet" href="__ROOT__/public/css/reset.css">
+	<script src="__ROOT__/library/js/jquery.min.js"></script>
+	<script src="__ROOT__/library/js/index.js"></script>
+	<script src="__ROOT__/library/js/html5.js"></script>
+	<style>
+	.ui-popup-guanbi{height:20px;width: 20px;margin-top:-10px;margin-left:390px;
+		background:url('__ROOT__/public/images/close21.png');cursor:pointer;}
+		
+		.key{
+			float:right;
+			margin:-2.8% 0.5% 0px 0px;
+			background:url(__ROOT__/public/images/sousuo.png) no-repeat;
+			border:hidden;
+			width:165px;
+			    height: 25px;
+		}
+	</style>
+	<!--   <img src="__ROOT__/public/images/sousuo.png" class="img"> -->
+</head>
+<body>
+	<include file="Public:header"/><br/>
+	<table width="960"  cellpadding="1" cellspacing="0" style="margin-left:16.5%;" align="center">
+	<volist name="arr" key="k" id="v">
+	<tr style="background-color:{:$k%2==NULL?'#FFFFFF':'#F1F5FE'}">
+		<td><a href="__APP__/News/index/id/{$v.id}">{$v.title}</a></td>
+		<td><a href="__APP__/News/index/id/{$v.id}">{$v.date}</a></td>
+	</tr>
+	</volist>
+	<tr>
+		<td class="pagelist">{$pageList}</td>
+	</tr>
+</table>
+<br/><br/>
+</body>
+</html>
